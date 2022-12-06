@@ -11,14 +11,14 @@ jobs:
       - image: python:3.7-alpine3.11
     steps:
       - checkout
-       - add_ssh_keys:
-            # You can get this ID in the section where you registered the SSH Key
-            fingerprints: ["2a:b9:89:4d:27:75:45:14:ed:72:a6:5d:d0:ac:6b:16"] 
+      - add_ssh_keys:
+        # You can get this ID in the section where you registered the SSH Key
+        fingerprints: ["2a:b9:89:4d:27:75:45:14:ed:72:a6:5d:d0:ac:6b:16"] 
       - run:
         name: Install Ansible
         command: |
           apk add --update ansible
-          
+
       - run:
         name: Run Playbook and Configure server
         command: |
